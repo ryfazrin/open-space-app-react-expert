@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import LoginInput from './LoginInput';
 
 describe('LoginInput component', () => {
@@ -9,6 +10,7 @@ describe('LoginInput component', () => {
     const usernameInput = await screen.getByPlaceholderText('Username');
 
     // Action
+    await userEvent.type(usernameInput, 'usernametest');
 
     // Assert
   });
