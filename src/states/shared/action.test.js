@@ -71,6 +71,7 @@ describe('asyncPopulateUsersAndTalks thunk', () => {
     window.alert = jest.fn();
 
     // action
+    await asyncPopulateUsersAndTalks()(dispatch);
 
     // assert
   });
