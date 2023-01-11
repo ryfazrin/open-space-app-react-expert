@@ -59,6 +59,19 @@ describe('asyncPopulateUsersAndTalks thunk', () => {
     expect(dispatch).toHaveBeenCalledWith(receiveUsersActionCreator(fakeUsersResponse));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
+
+  it('should dispatch action and call alert correctly when data fetching failed', async () => {
+    // arrange
+    // stub implementation
+    api.getAllUsers = () => Promise.reject(fakeErrorResponse);
+    api.getAllTalks = () => Promise.reject(fakeErrorResponse);
+    // mock dispatch
+    const dispatch = jest.fn();
+
+    // action
+
+    // assert
+  });
 });
 
 /**
