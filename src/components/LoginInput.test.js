@@ -17,6 +17,18 @@ describe('LoginInput component', () => {
     // Assert
     expect(usernameInput).toHaveValue('usernametest');
   });
+
+  it('should handle password typing correctly', async () => {
+    // Arrange
+    render(<LoginInput login={() => {}} />);
+    const passwordInput = await screen.getByPlaceholderText('Password');
+
+    // Action
+    await userEvent.type(passwordInput, 'passwordtest');
+
+    // Assert
+    expect(passwordInput).toHaveValue('passwordtest');
+  });
 });
 
 /**
