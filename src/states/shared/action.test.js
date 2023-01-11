@@ -67,6 +67,8 @@ describe('asyncPopulateUsersAndTalks thunk', () => {
     api.getAllTalks = () => Promise.reject(fakeErrorResponse);
     // mock dispatch
     const dispatch = jest.fn();
+    // mock alert
+    window.alert = jest.fn();
 
     // action
 
