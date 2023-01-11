@@ -1,6 +1,12 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import LoginInput from './LoginInput';
+
 describe('LoginInput component', () => {
   it('should handle username typing correctly', async () => {
     // Arrange
+    render(<LoginInput login={() => {}} />);
+    const usernameInput = await screen.getByPlaceholderText('Username');
 
     // Action
 
