@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import LoginInput from './LoginInput';
 
+import '@testing-library/jest-dom';
+
 describe('LoginInput component', () => {
   it('should handle username typing correctly', async () => {
     // Arrange
@@ -13,6 +15,7 @@ describe('LoginInput component', () => {
     await userEvent.type(usernameInput, 'usernametest');
 
     // Assert
+    expect(usernameInput).toHaveValue('usernametest');
   });
 });
 
